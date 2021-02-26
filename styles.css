@@ -1,0 +1,266 @@
+:root {
+    --very-dark-gray-blue: hsl(217, 19%, 35%);
+    --desaturated-dark-blue: hsl(214, 17%, 51%);
+    --gray-blue: hsl(212, 23%, 69%);
+    --light-gray-blue: hsl(210, 46%, 95%);
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 13px;
+    font-family: 'Manrope', sans-serif;
+    background-color: var(--light-gray-blue);
+}
+
+main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    height: 90vh;
+}
+
+#primary-box {
+    background-color: white;
+
+    height: 270px;
+    width: 650px;
+
+    display: flex;
+    flex-direction: row;
+
+    border-radius: 10px;
+    box-shadow: 0 8px 20px -15px black;
+}
+
+#drawer-image {
+    border-radius: 10px 0px 0px 10px;
+    overflow: auto;
+    object-fit: cover;
+    object-position: -20px 0;
+}
+
+#info-box {
+    padding: 3% 5% 0% 5%;
+}
+
+#info-box h2 {
+    color: var(--very-dark-gray-blue);
+    margin-bottom: 10px;
+}
+
+#info-box p {
+    color: var(--desaturated-dark-blue);
+    line-height: 1.5;
+}
+
+#profile-box{
+    margin-top: 15px;
+    height: 20%;
+    display: grid;
+    grid-template-columns: 1fr 7fr 1fr;
+}
+
+#michelle-image {
+    height: 100%;
+    width: auto;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+#name-box {
+    margin-top: 8px;
+}
+
+#name-box p:first-child{
+    color: var(--very-dark-gray-blue);
+}
+
+#name-box p:last-child{
+    color: var(--gray-blue);
+}
+
+.icon-box {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    margin-top: 50%;
+
+}
+
+.icon-box:hover{
+    cursor: pointer;
+}
+
+
+.beWhite {
+    
+    filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(51deg) brightness(155%) contrast(104%);
+}
+
+.shareOn {
+    background-color: var(--desaturated-dark-blue);
+}
+
+
+
+.share-modal{
+    border-radius: 10px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    height: 50px;
+    width: 230px;
+
+    margin-top: 10px;
+    margin-left: 275px;
+
+    position: absolute;
+
+    background-color: var(--very-dark-gray-blue);
+    
+}
+
+.share-modal::after{
+    content: "";
+
+	width: 0;
+	height: 0;
+
+	position: absolute;
+
+	border-left: 15px solid transparent;
+	border-right: 15px solid transparent;
+	border-top: 15px solid var(--very-dark-gray-blue);
+	
+	bottom: -15px;
+	left: 42.5%;
+}
+
+.share-modal #image-box{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-content: center;
+}
+
+#image-box img {
+}
+
+.share-modal #share-phrase-box span {
+    margin-left: 15px;
+    letter-spacing: 0.5rem;
+    color: white;
+    opacity: 0.5;
+}
+#share-phrase-box{
+    
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+}
+
+.show {
+    display: none;
+}
+
+footer {
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+@media (max-width: 735px)
+{
+    #primary-box {
+        height: 72%;/*630px*/
+        width: 48.9%;/*390px*/
+
+        flex-direction: column;
+    }
+
+    #drawer-image {
+        overflow:hidden;
+        object-fit: contain;
+
+        object-position: 0 0;
+        
+        border-radius: 10px 10px 0px 0px;
+    }
+
+    #info-box {
+        margin-top: -50%;/*-170px  && -75%*/
+        padding: 0% 10% 0% 10%;
+    }
+
+    #info-box h2 {
+        margin-bottom: 13px;
+    }
+
+    #profile-box{
+        margin-top: 5%;/*30px*/
+    }
+
+    #michelle-image {
+        height: 5vh;
+    }
+
+    .share-modal {
+        position: absolute;
+        border-radius: 0px 0px 10px 10px;
+
+        height: 8vh;/*68px*/
+        width: 48.8%;/*390px*/
+
+        margin-top: 29vh;
+        margin-left: 0px;
+        z-index: 1;
+    }
+
+    .share-modal::after{
+        border-left: 0px ;
+        border-right: 0px ;
+        border-top: 0px ;
+    }
+
+    #share-phrase-box{
+       justify-content: left;
+       width: 10vw;/*60%*/
+    }
+
+    .share-modal #image-box{
+        margin-left: -10vw;/*-80px*/
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+
+    .share-modal #image-box img {
+        margin-right: 5vw;
+    }
+
+    .icon-box {
+        
+        height: 3vh;
+        width: auto;
+        z-index: 2;
+    }
+
+    .icon-box.shareOn{
+        margin-top: 2.5vh;
+    }
+
+
+
+}
